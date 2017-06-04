@@ -1,0 +1,89 @@
+package entity;
+
+import java.io.Serializable;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+
+@Entity
+public class TerminalE implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+ 	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
+	@Column(unique=true)
+	private String nomeLocal;
+	@Column(unique=true)
+	private String cnpj;
+	
+	@JoinColumn(name = "endereco_id", referencedColumnName = "id")
+    @OneToOne(optional = false, fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	private Endereco endereco;
+	
+	public TerminalE() {
+	}
+
+	public TerminalE(Integer id, String nomeLocal, String cnpj, Endereco endereco) {
+		super();
+		this.id = id;
+		this.nomeLocal = nomeLocal;
+		this.cnpj = cnpj;
+		this.endereco = endereco;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getNomeLocal() {
+		return nomeLocal;
+	}
+
+	public void setNomeLocal(String nomeLocal) {
+		this.nomeLocal = nomeLocal;
+	}
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	@Override
+	public String toString() {
+		return nomeLocal;
+	}
+
+	
+	
+
+
+	
+	
+}
