@@ -15,6 +15,7 @@ public Usuario(Integer idUsuario, String nome, String email, String senha) {
 	this.email = email;
 	this.senha = senha;
 }
+
 	
   
 } 
