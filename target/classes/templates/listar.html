@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<table> 
+      <tr>
+        <td>Nome</td>
+        <td>E-mail</td>
+      </tr>
+	<tbody th:remove="${#arrays.isEmpty(lista)} ? all : 'all-but-first'">
+      <tr th:each="emp : ${lista}">
+        <td th:text="${emp.nome}">Nome</td>
+        <td th:text="${emp.email}">E-mail</td>
+      </tr>
+      <tr>
+      <td>FULANO</td>
+      <td>FULANO@GMAIL.COM</td>
+      </tr>
+	</tbody>      
+    </table>
+    
+    <p th:text="${msg}" />
+</body>
+</html>

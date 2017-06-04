@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: safira
+Implementation-Version: 0.1.0
+Built-By: Anderson
+Implementation-Vendor-Id: safira
+Build-Jdk: 1.8.0_91
+Implementation-URL: http://projects.spring.io/spring-boot/safira/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
