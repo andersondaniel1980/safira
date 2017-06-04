@@ -10,14 +10,6 @@ import org.thymeleaf.extras.springsecurity4.auth.AuthUtils;
 import org.thymeleaf.util.Validate;
 
 
-
-
-
-/**
- * 
- * @author Daniel Fern&aacute;ndez
- *
- */
 public final class Authorization {
 
 
