@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
-	  >
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" >
 	  
-    <head>
-        <title>Spring Security Example</title>
-    </head>
-    <body>
-        <h1>Welcome!</h1>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script src="/js/alert.js"></script>
+      	
+    <title>Spring Security Example</title>
+</head>
 
-        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+<body>
+
+    <h1>Welcome!</h1>
+    <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
 
 <span sec:authorize="isAuthenticated()">
-             | Nome: <span sec:authentication="name"></span> |
-                Perfil: <span sec:authentication="principal.authorities"></span> |
-                <a th:href="@{/logout}">Sign Out</a>
+             | Nome: <span sec:authentication="name"></span> 
+             | Perfil: <span sec:authentication="principal.authorities"></span> 
+             | <a th:href="@{/logout}">Sign Out</a>
 </span>
+
+  <form action="atualizar_matriz.php?id=0" method="post" enctype="multipart/form-data" name="form1" target="_self" id="form1">
+ <div class="col-md-4">
+              <div class="form-group">
+                <label>CONTRATO / VENDA</label>
+               	  <input type="text" name="n_contrato" class="form-control" placeholder="CONTRATO / VENDA" value="temmm" />
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>CONTRATO BUYER</label>
+               	  <input type="text" name="contrato_buyer" class="form-control" placeholder="CONTRATO BUYER" value="" />
+              </div>
+            </div>
+  
+
+</form>
         
-    </body>
+
+</body>
 </html>

@@ -16,28 +16,6 @@ import entity.Cliente;
 @Controller
 public class GreetingController extends WebMvcConfigurerAdapter{
 
-//	@Override
-//    public void addViewControllers(ViewControllerRegistry registry) {
-//        registry.addViewController("/home").setViewName("home");
-//        registry.addViewController("/").setViewName("home");
-//        registry.addViewController("/hello").setViewName("hello");
-//        registry.addViewController("/login").setViewName("login");
-//    }
-//	
-    
-//    @RequestMapping("/")
-//    public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
-//        model.addAttribute("name", name);
-//        return "index";
-//    }
-
-	
-	
-//    @RequestMapping("/cadastro")
-//    public String cadastro(){
-//    	return "cadastro";
-//    }
-
     @RequestMapping(value="/cadastrar", method=RequestMethod.POST)
 	 public ModelAndView cadastrar(ModelAndView modelV, Model model){
 		 modelV = new ModelAndView("cadastrar");
@@ -53,9 +31,16 @@ public class GreetingController extends WebMvcConfigurerAdapter{
 	 public ModelAndView listar(ModelAndView modelV, Model model){
 		 modelV = new ModelAndView("listar");
 		 try{
-			 Cliente c1 = new Cliente("Anderson", "anderson@gmail.com");
-			 Cliente c2 = new Cliente("Leandra", "leandra@gmail.com");
-			 Cliente c3 = new Cliente("Leticia", "leticia@gmail.com");
+			 Cliente c1 = new Cliente( );
+			 Cliente c2 = new Cliente();
+			 Cliente c3 = new Cliente();
+			 c1.setNomeContato("Anderson");
+			 c1.setEmailContato("anderson@gmail.com");
+			 c2.setNomeContato("Daniel");
+			 c2.setEmailContato("daniel@gmail.com");
+			 c3.setNomeContato("Araujo");
+			 c3.setEmailContato("araujo@gmail.com");
+			 
 			 List<Cliente> lst =  new ArrayList<>();
 			 lst.add(c1);
 			 lst.add(c2);
@@ -67,8 +52,6 @@ public class GreetingController extends WebMvcConfigurerAdapter{
 		 }
 		 return modelV;
 	 }
-    	
-    
     
     
 
