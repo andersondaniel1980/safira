@@ -14,7 +14,13 @@
     </parent>
 
     <dependencies>
-		
+
+
+				<dependency>
+    				<groupId>nz.net.ultraq.thymeleaf</groupId>
+    				<artifactId>thymeleaf-layout-dialect</artifactId>
+				</dependency>		
+
     		
     		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 					<dependency>
